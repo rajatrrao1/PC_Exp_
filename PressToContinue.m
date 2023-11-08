@@ -7,8 +7,6 @@ if E.useDev.useBitsi
     while 1
         if ~isempty(resp)
             if resp == (E.keys.aKey) || resp == (E.keys.sKey) || resp == (E.keys.dKey)
-                response = resp; % Assign the response
-                responsetime = rt; % Assign the response time
                 break; % Exit the loop since a response was detected
             end
         end
