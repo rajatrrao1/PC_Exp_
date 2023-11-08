@@ -25,6 +25,7 @@ addpath(genpath(pwd));
 CreateStim;
 MainMakeStimLists;
 
+CloseBitsi;
 PsychJavaTrouble(); % Fix possible Java problem
 IniResponseDev;
 IniScreen;
