@@ -1,0 +1,24 @@
+## Do First
+- Check how to listen to the response box within the experiment
+- Update the code to collect the time of response
+- Also collect the button that is pressed
+- Check if we need to send a trigger to the MEG computer, or if that is already being recorded
+
+## Code Structure
+- CreateStim.m Only creates the tones, without noise DONE
+- RunBlock.m Runs a stimulation block:
+    Starts with a ramp of noise DONE
+    
+    For each trial:
+    - PlayPair.m DONE
+        Plays a pair of tones with noise in the background
+    - Sent event to MEG
+    - Listen for behavioral response
+    - Record pupil data (or send event to eyelink?)
+
+    Plays noise until the next pair
+
+
+GenSequence
+## Yamil
+# Work on noise + tone intensity
