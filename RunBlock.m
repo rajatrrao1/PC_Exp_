@@ -23,7 +23,7 @@ for trial = 1:length(E.lists.mainTask(E.BlockCounter,:))
     %                 % Draw and present fixation cross
     %                 Screen('DrawLines', E.window, E.crossCoords, 2, E.white, [E.screenCenterX, E.screenCenterY]);
     %                 Screen('Flip', E.window);
-    ISI  =  1.75 + rand*2.5;
+    E.ISI  =  1.75 + rand*2.5;
     
     whichPair = E.lists.mainTask(E.BlockCounter,trial);
     % In the first 10 trials, use tone pairs in which the target is 10db
@@ -34,10 +34,10 @@ for trial = 1:length(E.lists.mainTask(E.BlockCounter,:))
         pair      = E.stim.tone_pairs(whichPair,:);
     end
     
-    PlayStim(pair, E.audio.sr, ISI, E.audio.pahandle);
+    PlayStim(pair, E.audio.sr, E.ISI, E.audio.pahandle);
     
     %Collect response
-    listenTime = length(pair)/E.audio.sr + ISI; % This determines how long to wait before moving to the next trial
+    listenTime = length(pair)/E.audio.sr + E.ISI; % This determines how long to wait before moving to the next trial
     [resp, respTime] = GetResponse(E, listenTime);
     
     E.resp.mainTask.resp(E.BlockCounter,trial)     = resp;

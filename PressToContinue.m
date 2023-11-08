@@ -5,8 +5,6 @@ responsetime = NaN;
 if E.useDev.useBitsi
     fprintf('Press a response key to continue...')
     while 1
-        [resp, rt] = E.bitsi.getResponse(ListenTime, true); % Wait for response within the remaining time
-
         if ~isempty(resp)
             if resp == (E.keys.aKey) || resp == (E.keys.sKey) || resp == (E.keys.dKey)
                 response = resp; % Assign the response

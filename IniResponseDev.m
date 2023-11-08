@@ -21,6 +21,7 @@ if E.useDev.useBitsi
     E.keys.aKey = 97; % index finger
     E.keys.sKey = 98; % middle finger
     E.keys.dKey = 99; % ring finger
+    ListenChar(2);
     
 else
     E.bitsi = Bitsi(''); % testing mode, use keyboard
