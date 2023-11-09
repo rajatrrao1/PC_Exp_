@@ -3,26 +3,25 @@ function [response, responsetime] = GetResponse(E, ListenTime)
 % Wait for a response, or for the full duration of the ISI
 response     = 0;
 responsetime = NaN;
-stim_time = ((E.stim.dur*2)+E.stim.gap);
 
 if E.useDev.useBitsi
 
     starttime = GetSecs;
-    [resp, rt] = E.bitsi.getResponse(E.ISI+stim_time, false); % Wait for response within the remaining time
+    [resp, rt] = E.bitsi.getResponse(ListenTime, false); % Wait for response within the remaining time
     E.bitsi.clearResponses();
 
     if ~isempty(resp)
         if resp == (E.keys.aKey)
             response = 1;
-            responsetime = (rt-starttime-stim_time);
+            responsetime = (rt-starttime);
             if strcmp(E.task,'Stair'), fprintf('Detected\n'); else, fprintf('Tone A\n'); end
         elseif resp == (E.keys.sKey)
             response = 2;
-            responsetime =  (rt-starttime-stim_time);
+            responsetime =  (rt-starttime);
             if strcmp(E.task,'Stair'), fprintf('Detected\n'); else, fprintf('Tone B\n'); end
         elseif resp == (E.keys.dKey)
             response = 3;
-            responsetime =  (rt-starttime-stim_time);
+            responsetime =  (rt-starttime);
             if strcmp(E.task,'Stair'), fprintf('Undetected\n'); else, fprintf('No Tone\n'); end
 
         end

@@ -39,7 +39,7 @@ if useStaircase
     E.stim.staircase_amplitude = mean(E.staircase.reversalLevels(:,end-4:end),2);% After having determined stimulus levels with the staircase, adjust tone
 % intensity and create pairs
 else
-    E.stim.staircase_amplitude = repmat(.075,[1,4]); % .05 - .1
+    E.stim.staircase_amplitude = repmat(.175,[1,4]); % .05 - .1
 end
 
 CreateTonePairs

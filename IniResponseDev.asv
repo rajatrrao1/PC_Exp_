@@ -1,5 +1,5 @@
 %% Response input
-
+E.useDev.useBitsi = 1;
 if E.useDev.useBitsi
     % button details
     %         % Right hand
@@ -22,11 +22,12 @@ if E.useDev.useBitsi
     E.keys.sKey = 98; % middle finger
     E.keys.dKey = 99; % ring finger
     
-    %E.keys.escKey    = KbName('escape');
-    %E.keys.returnKey = KbName('return');
+    E.keys.escKey    = KbName('escape');
+    E.keys.returnKey = KbName('return');
 
-    %KbCheckList = [E.keys.escKey, E.keys.returnKey];
-    %RestrictKeysForKbCheck(KbCheckList);
+    KbCheckList = [E.keys.escKey, E.keys.aKey, E.keys.sKey, E.keys.dKey, E.keys.returnKey];
+    
+    RestrictKeysForKbCheck(KbCheckList);
 
     ListenChar(2);
     
@@ -39,8 +40,10 @@ else
     E.keys.dKey      = KbName('l');
     E.keys.escKey    = KbName('escape');
     E.keys.returnKey = KbName('return');
-       
+   
+    
     KbCheckList = [E.keys.escKey, E.keys.aKey, E.keys.sKey, E.keys.dKey, E.keys.returnKey];
+    
     RestrictKeysForKbCheck(KbCheckList);
     
     % Suppress key presses in GUI
