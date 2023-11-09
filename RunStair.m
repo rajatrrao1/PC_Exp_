@@ -8,7 +8,7 @@ E.task = 'Stair';
 
 nTones                   = 4;                % For how many tones do staircasing
 E.staircase.maxTrials    = 80; % Maximum amount of trials allowed for staircasing
-E.staircase.maxReversals = 30; % 15 % The staircasing procedure stops when this number of reversals is reached (even before maxTrials is reached)
+E.staircase.maxReversals = 15; % 15 % The staircasing procedure stops when this number of reversals is reached (even before maxTrials is reached)
 
 E.staircase.stepUpSize   = 0.05;                             % Step size for ascending the stimulus level
 E.staircase.stepDownSize = -0.4142 * E.staircase.stepUpSize; % Step size for descending the stimulus level
