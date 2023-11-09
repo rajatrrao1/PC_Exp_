@@ -6,11 +6,11 @@ responsetime = NaN;
 stim_time = (E.stim.dur+E.stim.gap);
 
 if E.useDev.useBitsi
-    
+
     starttime = GetSecs;
     [resp, rt] = E.bitsi.getResponse(E.ISI+E.stim.dur+E.stim.gap, false); % Wait for response within the remaining time
     E.bitsi.clearResponses();
-    
+
     if ~isempty(resp)
         if resp == (E.keys.aKey)
             response = 1;
@@ -48,5 +48,4 @@ else
             responsetime = GetSecs-starttime;
         end
     end
-    E.bitsi.clearResponses();
 end

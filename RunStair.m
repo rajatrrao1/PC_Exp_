@@ -8,7 +8,7 @@ E.task = 'Stair';
 
 nTones                   = 4;                % For how many tones do staircasing
 E.staircase.maxTrials    = 80; % Maximum amount of trials allowed for staircasing
-E.staircase.maxReversals = 15; % 15 % The staircasing procedure stops when this number of reversals is reached (even before maxTrials is reached)
+E.staircase.maxReversals = 30; % 15 % The staircasing procedure stops when this number of reversals is reached (even before maxTrials is reached)
 
 E.staircase.stepUpSize   = 0.05;                             % Step size for ascending the stimulus level
 E.staircase.stepDownSize = -0.4142 * E.staircase.stepUpSize; % Step size for descending the stimulus level
@@ -52,11 +52,11 @@ for whichTone = E.staircase.toneOrder
         
         %Play tone
         tone = E.stim.tones(whichTone,:) * amplitude; % Scale the tone
-        ISI  =  1.75 + rand*2.5;
-        PlayStim(tone, E.audio.sr, ISI, E.audio.pahandle);
+        E.ISI  =  1.75 + rand*2.5;
+        PlayStim(tone, E.audio.sr, E.ISI, E.audio.pahandle);
         
         %Collect response
-        listenTime = length(tone)/E.audio.sr + ISI; % This determines how long to wait before moving to the next trial
+        listenTime = length(tone)/E.audio.sr + E.ISI; % This determines how long to wait before moving to the next trial
         [resp, respTime] = GetResponse(E, listenTime);
         
         % Responses 1 and 2 count as detection. Response 3 or no response
