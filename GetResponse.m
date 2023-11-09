@@ -14,15 +14,15 @@ if E.useDev.useBitsi
     if ~isempty(resp)
         if resp == (E.keys.aKey)
             response = 1;
-            responsetime = (rt-stim_time);
+            responsetime = (rt-starttime-stim_time);
             if strcmp(E.task,'Stair'), fprintf('Detected\n'); else, fprintf('Tone A\n'); end
         elseif resp == (E.keys.sKey)
             response = 2;
-            responsetime =  (rt-stim_time);
+            responsetime =  (rt-starttime-stim_time);
             if strcmp(E.task,'Stair'), fprintf('Detected\n'); else, fprintf('Tone B\n'); end
         elseif resp == (E.keys.dKey)
             response = 3;
-            responsetime =  (rt-stim_time);
+            responsetime =  (rt-starttime-stim_time);
             if strcmp(E.task,'Stair'), fprintf('Undetected\n'); else, fprintf('No Tone\n'); end
 
         end
